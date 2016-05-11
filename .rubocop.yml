@@ -3,7 +3,6 @@ AllCops:
   TargetRubyVersion: 2.3
   DisplayCopNames: true
   Exclude:
-    - "bin/**/*"
     - "vendor/**/*"
 
 Style/FrozenStringLiteralComment:
