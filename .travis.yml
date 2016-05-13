@@ -9,3 +9,6 @@ script:
   - cp .env.example .env
   - bundle exec rspec
   - bundle exec rubocop
+
+notifications:
+  email: false
