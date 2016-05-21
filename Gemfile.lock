@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sweeper_api (0.1.0)
+    sweeper_api (0.0.1)
       faraday (~> 0.9)
 
 GEM
