@@ -1,4 +1,4 @@
-describe SweeperAPI::Resource do
+describe SweeperAPI::Resources::Response do
   let(:subject) { described_class.new(response) }
 
   shared_examples "a resource response" do
@@ -31,6 +31,18 @@ describe SweeperAPI::Resource do
       expect(subject.fields[0]).to eq(subject.data.fields[0])
     end
 
+    it "has access to top level links" do
+      expect(subject.links.current?).to be(true)
+      expect(subject.links.first?).to_not be(true)
+
+      expect { URI.parse(subject.links.current) }.to_not raise_error
+      expect { URI.parse(subject.links.first) }.to raise_error(URI::InvalidURIError)
+    end
+
+    it "responds to methods defined on data" do
+      expect(subject.respond_to?(:name)).to be(true)
+    end
+
     it "can write to dynamic attributes" do
       subject.id                                      = "10"
       subject.fields[1].options.less_than_or_equal_to = 20
@@ -49,6 +61,24 @@ describe SweeperAPI::Resource do
       expect(subject.size).to eq(1)
       expect(subject[0].id).to eq("2")
       expect(subject[0].payload.first_name).to eq("John")
+    end
+
+    it "responds to methods defined on data" do
+      expect(subject.respond_to?(:size)).to be(true)
+    end
+
+    it "exposes links" do
+      expect(subject.links.current?).to be(true)
+      expect(subject.links.first?).to be(true)
+      expect(subject.links.prev?).to be(true)
+      expect(subject.links.next?).to be(true)
+      expect(subject.links.last?).to be(true)
+
+      expect { URI.parse(subject.links.current) }.to_not raise_error
+      expect { URI.parse(subject.links.first) }.to_not raise_error
+      expect { URI.parse(subject.links.prev) }.to_not raise_error
+      expect { URI.parse(subject.links.next) }.to_not raise_error
+      expect { URI.parse(subject.links.last) }.to_not raise_error
     end
   end
 end

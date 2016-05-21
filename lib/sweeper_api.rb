@@ -4,7 +4,7 @@ module SweeperAPI
   autoload :Client, "sweeper_api/client"
   autoload :Configuration, "sweeper_api/configuration"
   autoload :Middleware, "sweeper_api/middleware"
-  autoload :Resource, "sweeper_api/resource"
+  autoload :Resources, "sweeper_api/resources"
   autoload :Version, "sweeper_api/version"
 
   Faraday::Request.register_middleware(sweeper_request: -> { Middleware::Request })
