@@ -7,7 +7,7 @@ class SweeperAPI::Client
 
   attr_reader :host, :access_token
 
-  def initialize(host: "https://www.sweeper.io", access_token:)
+  def initialize(host: SweeperAPI.configuration.default_host, access_token:)
     raise MissingTokenError, "access token cannot be nil" if access_token.nil? || access_token =~ /\A\s*\z/
 
     @host         = host
