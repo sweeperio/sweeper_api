@@ -16,6 +16,10 @@ describe SweeperAPI::Resources::Response do
 
     it_behaves_like "a resource response"
 
+    it "is not a paged response" do
+      expect(subject.paged_response?).to_not be(true)
+    end
+
     it "parses data" do
       expect(subject.data.id).to eq("L9qxZE6qJuBnSpJdAfw1MA2F")
       expect(subject.data.name).to eq("Demo Campaign 1")
@@ -33,10 +37,9 @@ describe SweeperAPI::Resources::Response do
 
     it "has access to top level links" do
       expect(subject.links.current?).to be(true)
-      expect(subject.links.first?).to_not be(true)
+      expect(subject.links.respond_to?(:first)).to_not be(true)
 
       expect { URI.parse(subject.links.current) }.to_not raise_error
-      expect { URI.parse(subject.links.first) }.to raise_error(URI::InvalidURIError)
     end
 
     it "responds to methods defined on data" do
@@ -56,6 +59,10 @@ describe SweeperAPI::Resources::Response do
     let(:response) { JSON.parse(IO.binread("spec/fixtures/page.json")) }
 
     it_behaves_like "a resource response"
+
+    it "is a paged response" do
+      expect(subject.paged_response?).to be(true)
+    end
 
     it "makes resource quack like an array" do
       expect(subject.size).to eq(1)

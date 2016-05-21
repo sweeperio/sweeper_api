@@ -1,7 +1,13 @@
 class SweeperAPI::Resources::Response < SweeperAPI::Resources::Base
   def initialize(response)
-    response["links"] = parse_links(response.delete("links"))
+    paginated         = response["data"].is_a?(Array)
+    response["links"] = parse_links(response.delete("links"), paginated: paginated)
+
     super(response)
+  end
+
+  def paged_response?
+    data.is_a?(Array)
   end
 
   private
@@ -19,15 +25,12 @@ class SweeperAPI::Resources::Response < SweeperAPI::Resources::Base
     _attrs.key?("data") && data.respond_to?(method)
   end
 
-  def parse_links(link_object)
+  def parse_links(link_object, paginated:)
     link_object ||= {}
     link_object["current"] = link_object.delete("self")
 
-    {
-      "first" => nil,
-      "prev" => nil,
-      "next" => nil,
-      "last" => nil
-    }.merge(link_object)
+    defaults = {}
+    defaults = { "first" => nil, "prev" => nil, "next" => nil, "last" => nil } if paginated
+    defaults.merge(link_object)
   end
 end
