@@ -1,0 +1,41 @@
+{
+  "data":{
+    "links":{
+      "self":"http://localhost:3000/campaigns/L9qxZE6qJuBnSpJdAfw1MA2F.json",
+      "entries":"http://localhost:3000/campaigns/L9qxZE6qJuBnSpJdAfw1MA2F/entries.json"
+    },
+    "id":"L9qxZE6qJuBnSpJdAfw1MA2F",
+    "name":"Demo Campaign 1",
+    "start_date":"2016-05-07T11:45:15.609Z",
+    "end_date":null,
+    "fields":[
+      {
+        "name":"first_name",
+        "type":"Text",
+        "required":true,
+        "options":{
+          "min_length":null,
+          "max_length":null
+        }
+      },
+      {
+        "name":"random_number",
+        "type":"Number",
+        "required":true,
+        "options":{
+          "only_integer":true,
+          "greater_than":0,
+          "less_than_or_equal_to":10
+        }
+      }
+    ]
+  },
+  "links":{
+    "self":"http://localhost:3000/campaigns/L9qxZE6qJuBnSpJdAfw1MA2F.json"
+  },
+  "meta":{
+    "sweeper":{
+      "version":"0.1.0"
+    }
+  }
+}

@@ -4,7 +4,7 @@ describe SweeperAPI::Middleware::Response do
   describe "#parse" do
     it "parses response as json and creates an entity" do
       json = JSON.generate(data: "value")
-      expect(SweeperAPI::Entity).to receive(:parse)
+      expect(SweeperAPI::Resource).to receive(:new).with(JSON.parse(json))
 
       subject.parse(json)
     end

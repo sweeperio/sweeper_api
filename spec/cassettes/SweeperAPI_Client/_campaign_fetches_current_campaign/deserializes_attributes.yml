@@ -31,21 +31,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"38dea18afc549f4454c0947379026889"
+      - W/"e3369faa91943642ca3e5026e426eb0e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - acd0eaf1-21aa-4be0-8877-a6c1894da9e9
+      - c633bd16-b0fb-4472-acfd-1f36f7bb6a76
       X-Runtime:
-      - '0.023095'
+      - '0.027181'
       Connection:
       - close
       Server:
       - thin 1.6.2 codename Doc Brown
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"L9qxZE6qJuBnSpJdAfw1MA2F","type":"campaign","attributes":{"name":"Demo
-        Campaign 1","start_date":"2016-05-07T11:45:15.609Z","end_date":null},"relationships":{"fields":{"data":[{"id":"1","type":"text_campaign_field"},{"id":"2","type":"number_campaign_field"}]}},"links":{"self":"<API_HOST>/campaigns/L9qxZE6qJuBnSpJdAfw1MA2F","entries":"<API_HOST>/campaigns/L9qxZE6qJuBnSpJdAfw1MA2F/entries"}},"included":[{"id":"1","type":"text_campaign_field","attributes":{"name":"first_name","required":true,"options":{"min_length":null,"max_length":null}}},{"id":"2","type":"number_campaign_field","attributes":{"name":"random_number","required":true,"options":{"only_integer":true,"greater_than":0,"less_than_or_equal_to":10}}}],"jsonapi":{"version":"1.0","meta":{"api_version":"0.1.0"}}}'
+      string: '{"data":{"links":{"self":"<API_HOST>/campaigns/L9qxZE6qJuBnSpJdAfw1MA2F.json","entries":"<API_HOST>/campaigns/L9qxZE6qJuBnSpJdAfw1MA2F/entries.json"},"id":"L9qxZE6qJuBnSpJdAfw1MA2F","name":"Demo
+        Campaign 1","start_date":"2016-05-07T11:45:15.609Z","end_date":null,"fields":[{"name":"first_name","type":"Text","required":true,"options":{"min_length":null,"max_length":null}},{"name":"random_number","type":"Number","required":true,"options":{"only_integer":true,"greater_than":0,"less_than_or_equal_to":10}}]},"links":{"self":"<API_HOST>/campaigns/L9qxZE6qJuBnSpJdAfw1MA2F.json"},"meta":{"sweeper":{"version":"0.1.0"}}}'
     http_version: 
-  recorded_at: Thu, 12 May 2016 23:48:41 GMT
+  recorded_at: Thu, 19 May 2016 13:11:57 GMT
 recorded_with: VCR 3.0.1
