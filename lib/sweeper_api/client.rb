@@ -1,9 +1,11 @@
 class SweeperAPI::Client
   autoload :Campaigns, "sweeper_api/client/campaigns"
+  autoload :Entries, "sweeper_api/client/entries"
 
   MissingTokenError = Class.new(StandardError)
 
   include Campaigns
+  include Entries
 
   attr_reader :host, :access_token
 

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: "<API_HOST>/campaigns/current"
+    uri: "<API_HOST>/campaigns/<CAMPAIGN_ID>/entries.json"
     body:
       encoding: US-ASCII
       string: ''
@@ -31,21 +31,20 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"e3369faa91943642ca3e5026e426eb0e"
+      - W/"ee59f4ec22c594b8ec2717404326d12f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d5eb4acc-9b75-4b29-9749-11f119bb5022
+      - 70af69d0-7890-45f9-8951-33405709b29c
       X-Runtime:
-      - '0.087523'
+      - '0.023467'
       Connection:
       - close
       Server:
       - thin 1.6.2 codename Doc Brown
     body:
       encoding: UTF-8
-      string: '{"data":{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json","entries":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries.json"},"id":"<CAMPAIGN_ID>","name":"Demo
-        Campaign 1","start_date":"2016-05-07T11:45:15.609Z","end_date":null,"fields":[{"name":"first_name","type":"Text","required":true,"options":{"min_length":null,"max_length":null}},{"name":"random_number","type":"Number","required":true,"options":{"only_integer":true,"greater_than":0,"less_than_or_equal_to":10}}]},"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"meta":{"sweeper":{"version":"0.1.0"}}}'
+      string: '{"data":[{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/3.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"3","created_at":"2016-05-09T13:00:21.776Z","payload":{"first_name":"Kent","random_number":1}},{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/2.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"2","created_at":"2016-05-09T13:00:13.520Z","payload":{"first_name":"John","random_number":1}},{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/1.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"1","created_at":"2016-05-09T12:58:43.273Z","payload":{"first_name":"David","random_number":1}}],"links":{},"meta":{"sweeper":{"version":"0.1.0"}}}'
     http_version: 
   recorded_at: Sat, 21 May 2016 23:28:08 GMT
 recorded_with: VCR 3.0.1

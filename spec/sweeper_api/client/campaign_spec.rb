@@ -3,10 +3,9 @@ describe SweeperAPI::Client, :vcr do
     it "deserializes attributes" do
       subject = APIClient.campaign
 
-      expect(subject.id).to_not be_empty
-      expect(subject.name).to_not be_empty
-      expect(subject.start_date).to_not be_empty
-      expect(subject.fields).to be_kind_of(Array)
+      expect(subject).to_not be_nil
+      expect(subject.paged_response?).to_not be(true)
+      expect(api_request("/campaigns/current")).to have_been_made
     end
   end
 end
