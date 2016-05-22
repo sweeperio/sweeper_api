@@ -35,9 +35,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 737d9caa-03c9-4539-acb1-b9edd985429c
+      - d982837b-f32e-41df-b580-d76737f711c0
       X-Runtime:
-      - '0.021797'
+      - '0.022383'
       Connection:
       - close
       Server:
@@ -50,7 +50,7 @@ http_interactions:
   recorded_at: Sun, 22 May 2016 00:40:49 GMT
 - request:
     method: get
-    uri: "<API_HOST>/campaigns/<CAMPAIGN_ID>/entries.json"
+    uri: "<API_HOST>/campaigns/<CAMPAIGN_ID>/entries.json?page%5Bnumber%5D=1"
     body:
       encoding: US-ASCII
       string: ''
@@ -83,9 +83,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5a585686-76e4-4ab0-af81-835d23edde80
+      - 69464807-e420-43a5-aa76-61c071b61450
       X-Runtime:
-      - '0.026975'
+      - '0.025368'
       Connection:
       - close
       Server:

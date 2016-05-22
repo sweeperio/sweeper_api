@@ -35,9 +35,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d5eb4acc-9b75-4b29-9749-11f119bb5022
+      - 0aa7edc9-3aa6-4099-99e5-0caaff666cc2
       X-Runtime:
-      - '0.087523'
+      - '0.025625'
       Connection:
       - close
       Server:
@@ -47,5 +47,5 @@ http_interactions:
       string: '{"data":{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json","entries":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries.json"},"id":"<CAMPAIGN_ID>","name":"Demo
         Campaign 1","start_date":"2016-05-07T11:45:15.609Z","end_date":null,"fields":[{"name":"first_name","type":"Text","required":true,"options":{"min_length":null,"max_length":null}},{"name":"random_number","type":"Number","required":true,"options":{"only_integer":true,"greater_than":0,"less_than_or_equal_to":10}}]},"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"meta":{"sweeper":{"version":"0.1.0"}}}'
     http_version: 
-  recorded_at: Sat, 21 May 2016 23:28:08 GMT
+  recorded_at: Sun, 22 May 2016 00:40:49 GMT
 recorded_with: VCR 3.0.1

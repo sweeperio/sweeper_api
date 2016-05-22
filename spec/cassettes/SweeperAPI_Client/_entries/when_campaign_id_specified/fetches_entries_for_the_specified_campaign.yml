@@ -35,9 +35,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 70af69d0-7890-45f9-8951-33405709b29c
+      - 4be30862-1490-4eb5-a828-bdf04179454a
       X-Runtime:
-      - '0.023467'
+      - '0.023220'
       Connection:
       - close
       Server:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/3.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"3","created_at":"2016-05-09T13:00:21.776Z","payload":{"first_name":"Kent","random_number":1}},{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/2.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"2","created_at":"2016-05-09T13:00:13.520Z","payload":{"first_name":"John","random_number":1}},{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/1.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"1","created_at":"2016-05-09T12:58:43.273Z","payload":{"first_name":"David","random_number":1}}],"links":{},"meta":{"sweeper":{"version":"0.1.0"}}}'
     http_version: 
-  recorded_at: Sat, 21 May 2016 23:28:08 GMT
+  recorded_at: Sun, 22 May 2016 00:40:49 GMT
 recorded_with: VCR 3.0.1

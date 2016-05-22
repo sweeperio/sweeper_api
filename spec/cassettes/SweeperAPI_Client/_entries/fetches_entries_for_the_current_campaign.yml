@@ -35,9 +35,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 63c2d4d1-7bef-4c04-af6e-dd3996ab10f5
+      - 58a20b45-efed-41f0-bd36-fb0c1ea3329b
       X-Runtime:
-      - '0.025760'
+      - '0.024479'
       Connection:
       - close
       Server:
@@ -47,7 +47,7 @@ http_interactions:
       string: '{"data":{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json","entries":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries.json"},"id":"<CAMPAIGN_ID>","name":"Demo
         Campaign 1","start_date":"2016-05-07T11:45:15.609Z","end_date":null,"fields":[{"name":"first_name","type":"Text","required":true,"options":{"min_length":null,"max_length":null}},{"name":"random_number","type":"Number","required":true,"options":{"only_integer":true,"greater_than":0,"less_than_or_equal_to":10}}]},"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"meta":{"sweeper":{"version":"0.1.0"}}}'
     http_version: 
-  recorded_at: Sun, 22 May 2016 00:08:19 GMT
+  recorded_at: Sun, 22 May 2016 00:40:49 GMT
 - request:
     method: get
     uri: "<API_HOST>/campaigns/<CAMPAIGN_ID>/entries.json"
@@ -83,9 +83,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2de45cbf-e233-4681-b52b-b40c0df251ed
+      - e02773ee-9d87-4b74-b756-ab342eb564bb
       X-Runtime:
-      - '0.025141'
+      - '0.023166'
       Connection:
       - close
       Server:
@@ -94,5 +94,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/3.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"3","created_at":"2016-05-09T13:00:21.776Z","payload":{"first_name":"Kent","random_number":1}},{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/2.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"2","created_at":"2016-05-09T13:00:13.520Z","payload":{"first_name":"John","random_number":1}},{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/1.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"1","created_at":"2016-05-09T12:58:43.273Z","payload":{"first_name":"David","random_number":1}}],"links":{},"meta":{"sweeper":{"version":"0.1.0"}}}'
     http_version: 
-  recorded_at: Sun, 22 May 2016 00:08:19 GMT
+  recorded_at: Sun, 22 May 2016 00:40:49 GMT
 recorded_with: VCR 3.0.1
