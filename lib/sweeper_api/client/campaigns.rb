@@ -1,5 +1,5 @@
 module SweeperAPI::Client::Campaigns
   def campaign
-    connection.get("/campaigns/current").body
+    get("/campaigns/current")
   end
 end

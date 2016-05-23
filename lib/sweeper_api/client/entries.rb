@@ -5,6 +5,6 @@ module SweeperAPI::Client::Entries
   end
 
   def create_entry(campaign_id:, payload:)
-    post("/campaigns/#{campaign_id}/entries.json", JSON.generate(data: payload)).body
+    post("/campaigns/#{campaign_id}/entries.json", JSON.generate(data: payload))
   end
 end

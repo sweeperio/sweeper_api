@@ -6,12 +6,14 @@ describe SweeperAPI::Client, :vcr do
       it "fetches entries for the specified campaign" do
         APIClient.entries(campaign_id: campaign_id)
         expect(api_request("/campaigns/#{campaign_id}/entries.json")).to have_been_made
+        expect(APIClient.last_response.status).to eq(200)
       end
     end
 
     it "fetches entries for the current campaign" do
       APIClient.entries
       expect(api_request("/campaigns/#{campaign_id}/entries.json")).to have_been_made
+      expect(APIClient.last_response.status).to eq(200)
     end
 
     it "fetches a paged response" do
@@ -46,6 +48,7 @@ describe SweeperAPI::Client, :vcr do
 
       expect(resource).to_not be_nil
       expect(api_request("/campaigns/#{campaign_id}/entries.json", method: :post)).to have_been_made
+      expect(APIClient.last_response.status).to eq(201)
     end
 
     context "when entry not valid" do
@@ -57,6 +60,7 @@ describe SweeperAPI::Client, :vcr do
 
         expect(resource.errors).to be_kind_of(Array)
         expect(api_request("/campaigns/#{campaign_id}/entries.json", method: :post)).to have_been_made
+        expect(APIClient.last_response.status).to eq(422)
       end
     end
   end
