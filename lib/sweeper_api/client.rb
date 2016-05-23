@@ -1,9 +1,13 @@
 class SweeperAPI::Client
   autoload :Campaigns, "sweeper_api/client/campaigns"
+  autoload :Connection, "sweeper_api/client/connection"
+  autoload :Entries, "sweeper_api/client/entries"
 
   MissingTokenError = Class.new(StandardError)
 
   include Campaigns
+  include Connection
+  include Entries
 
   attr_reader :host, :access_token
 
@@ -16,11 +20,11 @@ class SweeperAPI::Client
 
   private
 
-  def connection
-    @connection ||= Faraday.new(host) do |conn|
-      conn.request(:sweeper_request, access_token)
-      conn.response(:sweeper_response)
-      conn.adapter(Faraday.default_adapter)
-    end
+  def paginate(url, options)
+    params                 = { page: {} }
+    params[:page][:number] = options.delete(:page) if options.key?(:page)
+    params[:page][:size]   = options.delete(:per_page) if options.key?(:per_page)
+
+    get(url, options.merge(params))
   end
 end
