@@ -25,4 +25,12 @@ class SweeperAPI::Client
       conn.adapter(Faraday.default_adapter)
     end
   end
+
+  def paginate(url, options)
+    params                 = { page: {} }
+    params[:page][:number] = options.delete(:page) if options.key?(:page)
+    params[:page][:size]   = options.delete(:per_page) if options.key?(:per_page)
+
+    connection.get(url, options.merge(params)).body
+  end
 end
