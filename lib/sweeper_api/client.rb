@@ -4,10 +4,13 @@ class SweeperAPI::Client
 
   MissingTokenError = Class.new(StandardError)
 
+  extend Forwardable
   include Campaigns
   include Entries
 
   attr_reader :host, :access_token
+
+  def_delegators :connection, :get, :post
 
   def initialize(host: SweeperAPI.configuration.default_host, access_token:)
     raise MissingTokenError, "access token cannot be nil" if access_token.nil? || access_token =~ /\A\s*\z/

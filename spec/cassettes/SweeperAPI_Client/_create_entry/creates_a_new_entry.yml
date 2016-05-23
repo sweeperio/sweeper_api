@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<API_HOST>/campaigns/<CAMPAIGN_ID>/entries.json"
+    body:
+      encoding: UTF-8
+      string: '{"data":{"first_name":"Tester","random_number":2}}'
+    headers:
+      User-Agent:
+      - SweeperAPI/Ruby 0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Location:
+      - "<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/8"
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"7eb042464b4e2a5f9df2d020dc68ec56"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 550197e5-15aa-4255-8ba1-0c9961c17278
+      X-Runtime:
+      - '0.297035'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.2 codename Doc Brown
+    body:
+      encoding: UTF-8
+      string: '{"data":{"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/8.json","campaign":"<API_HOST>/campaigns/<CAMPAIGN_ID>.json"},"id":"8","created_at":"2016-05-23T16:58:58.855Z","payload":{"first_name":"Tester","random_number":2}},"links":{"self":"<API_HOST>/campaigns/<CAMPAIGN_ID>/entries/8.json"},"meta":{"sweeper":{"version":"0.1.0"}}}'
+    http_version: 
+  recorded_at: Mon, 23 May 2016 16:58:58 GMT
+recorded_with: VCR 3.0.1

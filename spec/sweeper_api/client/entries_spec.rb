@@ -36,4 +36,28 @@ describe SweeperAPI::Client, :vcr do
       end
     end
   end
+
+  describe "#create_entry" do
+    it "creates a new entry" do
+      resource = APIClient.create_entry(
+        campaign_id: campaign_id,
+        payload: { first_name: "Tester", random_number: 2 }
+      )
+
+      expect(resource).to_not be_nil
+      expect(api_request("/campaigns/#{campaign_id}/entries.json", method: :post)).to have_been_made
+    end
+
+    context "when entry not valid" do
+      it "returns the errors" do
+        resource = APIClient.create_entry(
+          campaign_id: campaign_id,
+          payload: { first_name: "", random_number: 20 }
+        )
+
+        expect(resource.errors).to be_kind_of(Array)
+        expect(api_request("/campaigns/#{campaign_id}/entries.json", method: :post)).to have_been_made
+      end
+    end
+  end
 end

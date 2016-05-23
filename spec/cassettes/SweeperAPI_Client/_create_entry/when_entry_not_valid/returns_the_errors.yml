@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: "<API_HOST>/campaigns/<CAMPAIGN_ID>/entries.json"
+    body:
+      encoding: UTF-8
+      string: '{"data":{"first_name":"","random_number":20}}'
+    headers:
+      User-Agent:
+      - SweeperAPI/Ruby 0.0.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <API_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 422
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 7d7dbfed-0a5f-41d1-9028-366c42231232
+      X-Runtime:
+      - '0.020826'
+      Connection:
+      - close
+      Server:
+      - thin 1.6.2 codename Doc Brown
+    body:
+      encoding: UTF-8
+      string: '{"errors":["First name can''t be blank","Random number must be less
+        than or equal to 10"]}'
+    http_version: 
+  recorded_at: Mon, 23 May 2016 16:58:58 GMT
+recorded_with: VCR 3.0.1
